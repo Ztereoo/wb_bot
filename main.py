@@ -93,7 +93,7 @@ def check_price():
 
             with sq.connect('db_wb') as con:
                 cursor=con.cursor()
-                cursor.execute("UPDATE wb_data SET price=3210 WHERE product_id='product_id'")
+                cursor.execute(f"UPDATE wb_data SET price=3210 WHERE product_id={product_id}")
                 cursor.execute('SELECT * FROM wb_data')
                 f=cursor.fetchall()
                 print(f)
